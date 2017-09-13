@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+
+# >>ローカルテスト用
+# gemとして使う時には不要
+require "pry"
+lib = File.expand_path("../../lib", __FILE__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+# <<ローカルテスト用
+
+require "rubocop_paper"
+
+RubocopPaper::CLI.start
