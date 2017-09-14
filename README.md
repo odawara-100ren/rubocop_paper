@@ -1,28 +1,43 @@
 # RubocopPaper
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/rubocop_paper`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Converts json-formatted output of rubocop to a CSV format file.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'rubocop_paper'
+gem 'rubocop_paper', github: "odawara-100ren/rubocop_paper"
 ```
 
 And then execute:
 
-    $ bundle
+```
+$ bundle
+```
 
-Or install it yourself as:
+Or you can install it by yourself.
+[`specific_install`](https://github.com/rdp/specific_install) gem is needed for gem install.
 
-    $ gem install rubocop_paper
+```
+$ gem install specific_install
+$ gem specific_install -l "https://github.com/odawara-100ren/rubocop_paper"
+```
 
 ## Usage
 
-TODO: Write usage instructions here
+```
+$ rubocop_paper --file out.json
+```
+
+`-f` is aliase for `--file`.
+
+### Example
+
+```
+$ rubocop_paper --file out.json
+"./rubocop_file_stat.csv" is successfully created!
+```
 
 ## Development
 

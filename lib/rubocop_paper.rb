@@ -7,11 +7,11 @@ module RubocopPaper
   class CLI < Thor
     default_command :rubocop_csv
 
-    # rubocop_csv
-    # @param [String] json_file json形式のファイル。rubocopのアウトプット
     desc "convert input string to csv", "convert input string to csv"
-    def rubocop_csv(json_file)
+    method_option :file, type: :string, aliases: ['-f', '--file']
+    def rubocop_csv(*args)
       # 変数の定義
+      json_file = options[:file]
       output_file="rubocop_file_stat.csv"
       res = nil
       offenses = {}
@@ -73,7 +73,7 @@ module RubocopPaper
         cols2.each { |row| csv << row }
         cols3.each { |row| csv << row }
       end
-
+      puts "\"./#{output_file}\" is successfully created!"
     end
   end
 
